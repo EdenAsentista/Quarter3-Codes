@@ -1,0 +1,19 @@
+names = ["Me", "Lia", "Jake"]
+steps = [
+    [4500, 5200, 4800, 5000, 5300],
+    [4000, 4100, 3900, 4200, 4600],
+    [6000, 5800, 5900, 6100, 6200]
+]
+
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+
+daily_totals = []
+
+for day in range(5):                 # loop by column (days)
+    total = 0
+    for person in range(3):          # loop by row (people)
+        total += steps[person][day]
+    daily_totals.append(total)
+    print(days[day], "total steps:", total)
+
+print("Most active day:", days[daily_totals.index(max(daily_totals))])
